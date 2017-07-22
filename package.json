@@ -1,0 +1,15 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "my friend finder app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tim Bynum",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
+  }
+}

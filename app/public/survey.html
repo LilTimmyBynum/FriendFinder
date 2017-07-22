@@ -1,0 +1,244 @@
+<!-- survey.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Friend Finder</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Ravi+Prakash|Calligraffitti|Droid+Sans|Macondo" rel="stylesheet" type="text/css">
+</head>
+<style>
+body{
+    font-family: "Ravi Prakash";
+
+}
+.matchImg {
+    height: 50%;
+    max-width: 75%;
+    margin: 5%;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 50%;
+    color: #ffffff;
+    background-color: #D2B48C;
+    border-radius: 25px;
+}
+
+.close {
+    color: #ffffff;
+    opacity: 1;
+    font-size: 28px;
+}
+</style>
+
+<!-- <body style="font-family:'Ravi Prakash'"> -->
+<body>
+    <div id="theModal" class="modal">
+        <div class="modal-header">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Best Match</h2>
+        </div>
+        <h2 id="matchName"></h2>
+        <img id="matchImg" class="matchImg" alt>
+    </div>
+    <div class="container">
+        <h2>Survey Questions</h2>
+        <hr>
+        <h3><strong>About You</strong></h3>
+        <h4>Name (Required)</h4>
+        <input type="text" name id="name" class="form-control" required>
+        <h4>Link to photo image (Required)</h4>
+        <input type="text" name id="photo" class="form-control" required>
+        <hr>
+        <h3><strong>Question 1</strong></h3>
+        <h4>Being king is awesome even if all of your subjects are jackasses...hey, you are still a king!!</h4>
+        <select id="quest0" required>
+            <option value="" selected>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 2</strong></h3>
+        <h4>Being rich is okay but kindness is what we are all really looking for.</h4>
+        <select id="quest1" required>
+            <option value="" selected>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 3</strong></h3>
+        <h4>Aside from air, water, and food...masturbation..definitely masturbation.</h4>
+        <select id="quest2" required>
+            <option value="" selected>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 4</strong></h3>
+        <h4>Bad breath is just a minor nuisance that is way overrated.</h4>
+        <select id="quest3" required>
+            <option value="" selected>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 5</strong></h3>
+        <h4>If it were not for horoscopes this world would be a much better place.</h4>
+        <select id="quest4" required>
+            <option value="" selected>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 6</strong></h3>
+        <h4>Don't even worry about it...we have Obamacare.</h4>
+        <select id="quest5" required>
+            <option value="" selected>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 7</strong></h3>
+        <h4>Ok, so the WWF is fake..but it is still cool.</h4>
+        <select id="quest6" required>
+            <option value="" selected>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 8</strong></h3>
+        <h4>Generally speaking, it is ok to conservatively flush the toilet throughout the day to conserve water.</h4>
+        <select id="quest7" required>
+            <option value="" selected>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 9</strong></h3>
+        <h4>You would prefer to spend hours online using social media rather than interact with real people.</h4>
+        <select id="quest8" required>
+            <option value="" selected>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <h3><strong>Question 10</strong></h3>
+        <h4>O.J. did it.</h4>
+        <select id="quest9" required>
+            <option value="" selected>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit" id="submitAnswersBtn" class="btn btn-primary btn-lg btn-block">Submit</button>
+        <hr>
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/LilTimmyBynum/FriendFinder">GitHub Repo</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.7.0/chosen.jquery.min.js"></script>
+<script>
+//submit button click function
+$("#submitAnswersBtn").click(function() {
+    var myScores = [];
+    var test = true;
+
+    for (var count = 0; count < 10; count++) {
+        var ans = "quest" + count;
+        myScores[count] = $('#' + ans).val();
+
+        if (($("#name").val()) && ($("#photo").val())) {
+            if (myScores[count] === "") {
+                alert("Please fill out all fields before submitting!");
+                test = false;
+                return;
+            } else {
+                test = true;
+            };
+        } else {
+            alert("Please fill out all fields before submitting!");
+            test = false;
+            return;
+        };
+    };
+
+    var newFriend = {
+        name: $("#name").val().trim(),
+        photo: $("#photo").val().trim(),
+        scores: myScores
+    };
+
+    $.post("/api/friends", newFriend);
+
+    //clear all fields
+    name: $("#name").val("");
+    photo: $("#photo").val("");
+
+    for (var clear = 0; clear < 10; clear++) {
+        var ans = "quest" + clear;
+        $('#' + ans).val("");
+    }
+
+
+    // find match
+    var allFriends;
+    $.get("/api/friends", function(data) {
+        var lowest = 50;
+        var currentMatch;
+        for (var i = 0; i < (data.length - 1); i++) {
+            //compare scores
+            var tempScore = 0;
+            for (var j = 0; j < 10; j++) {
+                tempScore += Math.abs(Number(data[data.length - 1].scores[j]) - Number(data[i].scores[j]));
+            };
+            if (tempScore < lowest) {
+                lowest = tempScore;
+                currentMatch = data[i];
+            };
+        }
+        $("#matchName").text(currentMatch.name);
+        $("#matchImg").attr("src", currentMatch.photo);
+    });
+    $("#submitAnswersBtn").attr("disabled", true);
+    $("#theModal").css({ 'display': 'block' });
+});
+
+$("#closeModal").click(function() {
+    $("#theModal").css({ 'display': 'none' });
+    $("#submitAnswersBtn").attr("disabled", false);
+
+})
+</script>
+
+</html>
